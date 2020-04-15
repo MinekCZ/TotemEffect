@@ -1,0 +1,29 @@
+name: TotemEffect
+author: MinekCz
+version: 1.0.0
+api: [3.0.0]
+description: will show a totem when you join
+main: MinekCz\TotemEffect\main
+depend: [Slapper]
+
+commands:
+ jointotem:
+  description: §aJoinTotem!
+  usage: "/jointotem"
+ titletotem:
+  description: §aTitleTotem!
+  usage: "/titletotem"
+ totemeffect:
+  description: §aTotemEffect!
+  usage: "/totemeffect"
+
+permissions:
+ jointotem:
+  description: "permission for /jointotem"
+  default: true
+ titletotem:
+  description: "permission for /titletotem"
+  default: true
+ totemeffect:
+  description: "permission for /totemeffect"
+  default: true

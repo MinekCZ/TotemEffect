@@ -1,0 +1,23 @@
+# TotemEffect by MinekCz 1.0.0
+
+
+
+# Join Totem with title
+# You can use /jointotem
+
+jointitle: "§a§lWelcome to"
+
+
+joinsubtitle: "§l§aExample Server"
+
+# -----------------------------
+
+
+# Title with Totem 
+# You can use /titletotem
+
+
+totemtitle: "§a§lExample Title"
+
+
+totemsubtitle: "§l§aExample SubTitle"
