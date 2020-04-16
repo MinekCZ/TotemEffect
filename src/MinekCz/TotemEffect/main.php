@@ -13,9 +13,13 @@ use pocketmine\scheduler\Task;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat;
 use pocketmine\item\Item;
+use pocketmine\entity\{Effect, EffectInstance};
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\network\mcpe\protocol\ActorEventPacket;
 use pocketmine\network\mcpe\protocol\LevelEventPacket;
+use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\nbt\tag\StringTag;
+
 
 
 class Main extends PluginBase implements Listener {
@@ -56,6 +60,16 @@ class Main extends PluginBase implements Listener {
                 if($sender instanceof Player) {
 
                     $this->TotemEffect($sender);
+
+                }
+            break;
+            case "gettotem":
+                if($sender instanceof Player) {
+
+                   $item = Item::get(450,0,1);
+                   $item->SetCustomName($this->getConfig()->get("totem_name"));
+                   $item->setNamedTagEntry(new StringTag($this->getConfig()->get("totem_tag")));
+                   $sender->getInventory()->addItem($item);
 
                 }
             break;
@@ -111,6 +125,33 @@ class Main extends PluginBase implements Listener {
         $player->dataPacket($te);
 
         $player->getInventory()->setItemInHand(Item::get(0,0,1));
+
+    }
+
+    public function onClick(PlayerInteractEvent $event) {
+
+        $player = $event->getPlayer();
+        $item = $event->getItem();
+
+        if($item->GetNamedTag()->hasTag($this->getConfig()->get("totem_tag"))) {
+
+            $player->getInventory()->setItemInHand(Item::get(450,0,1));
+
+            $player->broadcastEntityEvent(ActorEventPacket::CONSUME_TOTEM);
+    
+            $te = new LevelEventPacket();
+            $te->evid = LevelEventPacket::EVENT_SOUND_TOTEM;
+            $te->position = $player->add(0, $player->eyeHeight, 0);
+            $te->data = 0;
+            $player->dataPacket($te);
+            $player->getInventory()->setItemInHand(Item::get(0,0,1));
+            $player->removeAllEffects();
+            
+            $player->addEffect(new EffectInstance(Effect::getEffect(Effect::REGENERATION), (10*20), (2), (false)));
+            $player->addEffect(new EffectInstance(Effect::getEffect(Effect::RESISTANCE), (20*20), (2), (false)));
+            
+        }
+
 
     }
 }

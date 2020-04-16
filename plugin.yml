@@ -1,6 +1,6 @@
 name: TotemEffect
 author: MinekCz
-version: 1.0.0
+version: 2.0.0
 api: [3.0.0]
 description: will show a totem when you join
 main: MinekCz\TotemEffect\main
@@ -16,6 +16,9 @@ commands:
  totemeffect:
   description: §aTotemEffect!
   usage: "/totemeffect"
+ gettotem:
+  description: §aGetEffect!
+  usage: "/gettotem"
 
 permissions:
  jointotem:
@@ -26,4 +29,7 @@ permissions:
   default: true
  totemeffect:
   description: "permission for /totemeffect"
+  default: true
+ gettotem:
+  description: "permission for /gettotem"
   default: true

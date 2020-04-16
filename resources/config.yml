@@ -1,5 +1,5 @@
-# TotemEffect by MinekCz 1.0.0
-
+# TotemEffect by MinekCz 2.0.0
+# Remove config after each update
 
 
 # Join Totem with title
@@ -21,3 +21,18 @@ totemtitle: "§a§lExample Title"
 
 
 totemsubtitle: "§l§aExample SubTitle"
+
+# ------------------------------
+
+
+# Get Totem
+# You can use /gettotem
+
+
+# Custom totem name
+totem_name: "§6§lExampleName"
+
+# Don't change this unless you know what you're doing
+totem_tag: "totem"
+
+
