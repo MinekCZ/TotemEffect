@@ -24,3 +24,5 @@ This title will be displayed when you join
 [![](https://poggit.pmmp.io/shield.state/TotemEffect)](https://poggit.pmmp.io/p/TotemEffect)
 <a href="https://poggit.pmmp.io/p/TotemEffect"><img src="https://poggit.pmmp.io/shield.state/TotemEffect"></a>
 
+[![](https://poggit.pmmp.io/shield.api/TotemEffect)](https://poggit.pmmp.io/p/TotemEffect)
+<a href="https://poggit.pmmp.io/p/TotemEffect"><img src="https://poggit.pmmp.io/shield.api/TotemEffect"></a>
